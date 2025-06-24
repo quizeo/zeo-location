@@ -11,13 +11,13 @@ const MainNavigation = () => {
   return (
     <>
       {isDrawerOpen && <Backdrop onClick={() => setIsDrawerOpen(false)} />}
-      {isDrawerOpen && (
-        <SideDrawer>
-          <nav className="main-navigation__drawer-nav">
-            <NavLinks />
-          </nav>
-        </SideDrawer>
-      )}
+
+      <SideDrawer show={isDrawerOpen} onClick={() => setIsDrawerOpen(false)}>
+        <nav className="main-navigation__drawer-nav">
+          <NavLinks />
+        </nav>
+      </SideDrawer>
+
       <MainHeader>
         <button
           onClick={() => setIsDrawerOpen(!isDrawerOpen)}
